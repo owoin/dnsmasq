@@ -7,5 +7,6 @@ wget -P /etc -O /etc/pdnsd.conf --no-check-certificate https://raw.githubusercon
 && wget -P /etc/dnsmasq.d/conf -O /etc/dnsmasq.d/conf/ad.conf --no-check-certificate https://raw.githubusercontent.com/vokins/yhosts/master/dnsmasq/union.conf \
 && cat /etc/dnsmasq.d/isp.conf >> /etc/dnsmasq.conf \
 && rm /etc/dnsmasq.d/isp.conf \
-&& /etc/init.d/dnsmasq stop & /etc/init.d/dnsmasq start \
+&& /etc/init.d/dnsmasq stop \
+&& /etc/init.d/dnsmasq start \
 && /etc/init.d/pdnsd restart
