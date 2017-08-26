@@ -1,0 +1,22 @@
+#!/bin/sh /etc/rc.common
+# Example script
+# Copyright (C) 2017 OpenWrt.org
+
+START=20
+STOP=15
+
+start() {
+		echo "goproxy start"
+		/opt/goproxy/goproxy >/dev/null 2>&1 &
+}
+stop() {
+		echo "goproxy stop"
+		ps w | grep 'goproxy' | awk '{print $1}' > /opt/goproxy/goproxy.pid
+		kill -9 `cat /opt/goproxy/goproxy.pid`
+}
+
+restart() {
+		stop & \
+ 		sleep 1 & \
+		start &
+}
