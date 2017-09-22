@@ -1,0 +1,3 @@
+#!/bin/sh
+wget -P /etc -O /etc/dnsmasq.d/github.sh --no-check-certificate https://raw.githubusercontent.com/owoin/dnsmasq/master/openwrt/etc/dnsmasq.d/github.sh
+/etc/dnsmasq.d/github.sh
